@@ -1,57 +1,37 @@
-# 📱 Aplikasi Biodata Siswa - Flutter & PHP
+# 📱 Aplikasi Biodata Siswa - Flutter & PHP Backend
 
-Tugas aplikasi biodata siswa menggunakan **Flutter** sebagai Frontend dan **PHP (PDO)** sebagai Backend API dengan database **MySQL**.
+[![Flutter](https://img.shields.io/badge/Framework-Flutter-02569B?logo=flutter&logoColor=white)](https://flutter.dev)
+[![PHP](https://img.shields.io/badge/Backend-PHP-777BB4?logo=php&logoColor=white)](https://www.php.net)
+[![MySQL](https://img.shields.io/badge/Database-MySQL-4479A1?logo=mysql&logoColor=white)](https://www.mysql.com)
 
-## 📸 Tampilan Aplikasi
-<img width="1365" height="629" alt="image" src="https://github.com/user-attachments/assets/faa05b98-68e4-4f21-92eb-a33bf1a8d9fa" />
-<img width="1366" height="627" alt="image" src="https://github.com/user-attachments/assets/fd6e9b1a-67bd-4e8b-a37b-b7823b69d5ea" />
-<img width="1366" height="631" alt="image" src="https://github.com/user-attachments/assets/89e7bbe9-22f1-4716-94a4-8f1d48954213" />
-<img width="1366" height="621" alt="image" src="https://github.com/user-attachments/assets/c34b99e4-a65c-4c93-a9ff-041e7c33c4a6" />
-
-
-
-## 🛠️ Fitur
-* Menampilkan daftar siswa dari database
-* Menambah data siswa baru
-* Mengubah data siswa yang sudah ada
-* Navigasi antar halaman (Home, Create, Edit, Detail)
-
-## 🚀 Cara Instalasi
-
-### 1. Backend (XAMPP)
-* Pindahkan folder `backend_php` ke folder `htdocs`
-* Import database menggunakan file `database.sql`:
-    ```sql
-    CREATE TABLE `siswa` (
-      `id` int(11) NOT NULL AUTO_INCREMENT,
-      `nis` varchar(16) NOT NULL,
-      `nama` varchar(50) NOT NULL,
-      `tplahir` varchar(50) NOT NULL,
-      `tglahir` date NOT NULL,
-      `kelamin` varchar(15) NOT NULL,
-      `agama` varchar(15) NOT NULL,
-      `alamat` varchar(200) NOT NULL,
-      PRIMARY KEY (`id`)
-    );
-    ```
-
-### 2. Frontend (Flutter)
-* Pastikan koneksi internet stabil.
-* Ubah IP Address pada file `lib/models/api.dart` sesuaikan dengan IP laptop kamu:
-    ```dart
-    // Contoh: 10.2.16.29
-    static String host = "10.2.16.29"; 
-    ```
-* Jalankan perintah:
-    ```bash
-    flutter pub get
-    flutter run
-    ```
-
-## 📂 Struktur Proyek
-* `lib/models/`: Model data dan konfigurasi API
-* `lib/views/`: Halaman UI (Home, Create, Edit, Detail)
-* `backend_php/`: Script PHP untuk akses database
+Aplikasi manajemen biodata siswa berbasis mobile yang efisien. Menggunakan **Flutter** untuk antarmuka pengguna yang responsif dan **PHP (PDO)** sebagai REST API untuk mengelola database **MySQL**.
 
 ---
-**Dibuat oleh:** MUHAMMAD REVAN
+
+## 📸 Tampilan Aplikasi
+
+| Dashboard Utama | Detail Siswa | Form Input |
+| :---: | :---: | :---: |
+| <img width="300" alt="dashboard" src="https://github.com/user-attachments/assets/989df0de-a27b-403d-b7d8-7d50931c392a" /> | <img width="300" alt="detail" src="https://github.com/user-attachments/assets/d7cc1990-6014-452e-9a2a-9f33ed184cb0" /> | <img width="300" alt="form" src="https://github.com/user-attachments/assets/903fcf37-aa26-4485-9e41-b472f549a260" /> |
+
+---
+
+## 🛠️ Fitur Utama
+* **✅ Full CRUD Operations**: Menambah, melihat, mengubah, dan menghapus data siswa.
+* **🔍 Detail View**: Menampilkan informasi lengkap setiap siswa secara spesifik.
+* **🌐 REST API Integration**: Koneksi data real-time antara aplikasi mobile dan server lokal.
+* **📱 Clean UI/UX**: Tampilan minimalis dan navigasi yang intuitif antar halaman.
+
+---
+
+## 📂 Struktur Proyek
+```text
+.
+├── backend_php/          # Script PHP & Konfigurasi API
+│   ├── database.sql      # Skema database MySQL
+│   └── *.php             # Endpoint API (PDO)
+├── lib/
+│   ├── models/           # Logika data & konfigurasi Host API
+│   ├── views/            # Halaman Antarmuka (Home, Create, Edit, Detail)
+│   └── main.dart         # Titik masuk utama aplikasi
+└── pubspec.yaml          # Dependensi Proyek Flutter
